@@ -144,7 +144,7 @@ export default function FreeConsultationSection() {
   };
 
   return (
-    <section id="free-consultation" className="py-24 lg:py-32 bg-[#f5f0d5]">
+    <section id="assesment" className="py-24 lg:py-32 bg-[#f5f0d5]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Content */}

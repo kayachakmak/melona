@@ -8,7 +8,7 @@ const navLinks = [
   { href: "#our-dentist", label: "Our Dentist" },
   { href: "#plan-your-visit", label: "Plan Your Visit" },
   { href: "#services", label: "Services" },
-  { href: "#free-consultation", label: "Assesment" },
+  { href: "#assesment", label: "Assesment" },
   { href: "/practice", label: "Practice" },
   { href: "#contact", label: "Contact" },
 ];

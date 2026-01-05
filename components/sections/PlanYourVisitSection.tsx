@@ -113,7 +113,7 @@ export default function PlanYourVisitSection() {
           className="text-center mt-16"
         >
           <a
-            href="#free-consultation"
+            href="#assesment"
             className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3D4A32]/90 focus:outline-none focus:ring-2 focus:ring-[#3D4A32] focus:ring-offset-2"
           >
             Get Your Free Assessment

@@ -36,7 +36,7 @@ export default function ServicesSection() {
             </p>
             <div className="mt-10">
               <Link
-                href="#free-consultation"
+                href="#assesment"
                 className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-6 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3D4A32]/90"
               >
                 Book Today

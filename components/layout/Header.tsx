@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#our-dentist", label: "Our Dentist" },
   { href: "#services", label: "Services" },
-  { href: "#free-consultation", label: "Book" },
+  { href: "#assesment", label: "Assesment" },
   { href: "/practice", label: "Practice" },
   { href: "#contact", label: "Contact" },
 ];
