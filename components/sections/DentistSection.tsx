@@ -1,0 +1,144 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export default function DentistSection() {
+  return (
+    <section id="our-dentist" className="py-24 lg:py-32 bg-[#FAF9F6]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl">
+            Meet Our Dentist
+          </h2>
+        </motion.div>
+
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop"
+              alt="Dt. Melek - Principal Dentist"
+              fill
+              className="object-cover rounded-2xl"
+            />
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div className="mb-6">
+              <h3 className="font-serif text-3xl font-light text-[#3D4A32]">
+                Dt. Melek Merve Nurlu
+              </h3>
+              <p className="mt-2 text-lg text-[#293314]/70 font-medium">
+                Principal Dentist
+              </p>
+            </div>
+
+            <div className="space-y-4 text-lg text-[#3D4A32]/80">
+              <p>
+              After years of honing her skills in the private sector, Dt. Melek established her own clinic to escape the "assembly-line" feel of large practices. Specializing in <b> Smile Design and Cosmetic Dentistry</b>, she brings seven years of clinical excellence to her own boutique space.
+
+Unlike larger clinics where you might see multiple doctors, Dt. Melek is your dedicated partner in health. She hand-selects every material and performs every procedure herself. Her philosophy is simple: <b>  Modern technology, premium materials,</b>  and a doctor <b> who listens</b> .              </p>
+            </div>
+
+            {/* Our Approach */}
+            <div className="mt-10">
+              <h4 className="font-serif text-xl font-light text-[#3D4A32] mb-6">
+                Our Approach
+              </h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]">
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="#ffffff"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#3D4A32]">Prevention-Focused</h5>
+                    <p className="text-sm text-[#3D4A32]/70">
+                      We prioritize preventive care to help you avoid dental problems before they start
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]">
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="#ffffff"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#3D4A32]">Welcoming Nervous Patients</h5>
+                    <p className="text-sm text-[#3D4A32]/70">
+                      Gentle, patient approach for those who feel anxious about dental visits
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]">
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="#ffffff"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-[#3D4A32]">Family-Friendly</h5>
+                    <p className="text-sm text-[#3D4A32]/70">
+                      Care for the whole family, from children to grandparents
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
