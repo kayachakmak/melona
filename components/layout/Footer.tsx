@@ -16,9 +16,9 @@ export default function Footer() {
               melonadent@gmail.com
             </a>
             <a href="tel:+905551234567" className="block text-sm hover:opacity-70 transition-opacity">
-              +90 555 123 4567
+              +90 540 490 24 25
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="block text-sm hover:opacity-70 transition-opacity">
+            <a href="https://instagram.com/melonadentclinic" target="_blank" rel="noopener noreferrer" className="block text-sm hover:opacity-70 transition-opacity">
               Instagram
             </a>
           </div>
@@ -26,8 +26,16 @@ export default function Footer() {
           {/* Address */}
           <div className="space-y-1">
             <p className="text-sm">Melona Dent Clinic,</p>
-            <p className="text-sm">123 Dental Street,</p>
-            <p className="text-sm">Antalya, Turkey</p>
+            <p className="text-sm">Sarı Konak, Şirinyalı, Lara Cd. No: 171/B</p>
+            <p className="text-sm">07160 Muratpaşa/Antalya, Türkiye</p>
+            <a
+              href="https://maps.google.com/?q=Melona+Dent+Clinic,+123+Dental+Street,+Antalya,+Turkey"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm hover:opacity-70 transition-opacity underline mt-2"
+            >
+              Get Directions
+            </a>
           </div>
 
           {/* Opening Hours */}
