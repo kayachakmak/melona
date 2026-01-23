@@ -24,6 +24,7 @@ interface FormData {
   services: string[];
   xray: File | null;
   photos: (File | null)[];
+  notes: string;
 }
 
 export default function FreeConsultationSection() {
@@ -36,6 +37,7 @@ export default function FreeConsultationSection() {
     services: [],
     xray: null,
     photos: [null, null, null, null, null],
+    notes: "",
   });
   const [citySearch, setCitySearch] = useState("");
   const [showCityDropdown, setShowCityDropdown] = useState(false);
@@ -470,6 +472,25 @@ export default function FreeConsultationSection() {
                       ))}
                     </div>
                     {errors.photos && <p className="mt-2 text-sm text-red-500">{errors.photos}</p>}
+                  </div>
+
+                  {/* Additional Notes */}
+                  <div>
+                    <label htmlFor="notes" className="block text-sm font-medium text-[#3D4A32] mb-2">
+                      Anything We Should Know? (Optional)
+                    </label>
+                    <p className="text-xs text-[#3D4A32]/60 mb-2">
+                      e.g., existing dental work, specific concerns, or previous treatments
+                    </p>
+                    <textarea
+                      id="notes"
+                      name="notes"
+                      value={formData.notes}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, notes: e.target.value }))}
+                      rows={4}
+                      className="w-full rounded-lg border border-[#3D4A32]/20 bg-white px-4 py-3 text-[#3D4A32] placeholder:text-[#3D4A32]/40 focus:border-[#3D4A32] focus:outline-none focus:ring-2 focus:ring-[#3D4A32]/20 transition-all resize-none"
+                      placeholder="I currently have implants that may need replacing, I've had previous dental work done abroad, I have a dental phobia, etc."
+                    />
                   </div>
 
                   {/* Submit Button */}
