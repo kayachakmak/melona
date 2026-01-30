@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="tel:+905551234567" className="block text-sm hover:opacity-70 transition-opacity">
               +90 540 490 24 25
             </a>
-            <a href="https://instagram.com/melonadentclinic" target="_blank" rel="noopener noreferrer" className="block text-sm hover:opacity-70 transition-opacity">
+            <a href="https://instagram.com/melonadentclinic" target="_blank" rel="noopener noreferrer" className="block text-sm hover:opacity-70 underline transition-opacity">
               Instagram
             </a>
           </div>

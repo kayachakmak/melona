@@ -29,7 +29,7 @@ export default function DentistSection() {
             className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0"
           >
             <Image
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop"
+              src="/images/practice/DtMelek.jpg"
               alt="Dt. Melek - Principal Dentist"
               fill
               className="object-cover rounded-2xl"
@@ -82,9 +82,9 @@ Unlike larger clinics where you might see multiple doctors, Dt. Melek is your de
                     </svg>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-[#3D4A32]">Prevention-Focused</h5>
+                    <h5 className="font-semibold text-[#3D4A32]">Results That Last</h5>
                     <p className="text-sm text-[#3D4A32]/70">
-                      We prioritize preventive care to help you avoid dental problems before they start
+                    Focus on long-term oral health and natural-looking aesthetics you'll love
                     </p>
                   </div>
                 </li>
@@ -128,9 +128,10 @@ Unlike larger clinics where you might see multiple doctors, Dt. Melek is your de
                     </svg>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-[#3D4A32]">Family-Friendly</h5>
+                    <h5 className="font-semibold text-[#3D4A32]">Built for International Patients
+                    </h5>
                     <p className="text-sm text-[#3D4A32]/70">
-                      Care for the whole family, from children to grandparents
+                    Streamlined processes and comprehensive support from consultation through recovery
                     </p>
                   </div>
                 </li>

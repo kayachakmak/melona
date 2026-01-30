@@ -42,9 +42,9 @@ export default function AboutSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#3D4A32]">Modern Equipment</h3>
+                  <h3 className="font-semibold text-[#3D4A32]">Implant Expertise</h3>
                   <p className="text-sm text-[#3D4A32]/70">
-                    State-of-the-art technology for precise diagnostics and treatment
+                  Specialized in complex cases for international patients seeking quality and value
                   </p>
                 </div>
               </div>
@@ -65,9 +65,35 @@ export default function AboutSection() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#3D4A32]">Patient Comfort</h3>
+                  <h3 className="font-semibold text-[#3D4A32]">VIP Care Throughout</h3>
                   <p className="text-sm text-[#3D4A32]/70">
-                    Relaxing environment designed with your comfort in mind
+                  Luxury facilities with multilingual staff and personalized attention
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-center">
+              <div className="flex items-start gap-4 max-w-xs text-left">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="#3D4A32"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#3D4A32]">Treatment Meets Holiday</h3>
+                  <p className="text-sm text-[#3D4A32]/70">
+                  Located in Antalya's beautiful coastal district with warm weather and pristine beaches
                   </p>
                 </div>
               </div>
