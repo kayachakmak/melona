@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ServiceCategory } from "@/data/services";
 
@@ -45,7 +46,29 @@ export default function AccordionService({
                     key={index}
                     className="py-2 text-[#3D4A32]/80"
                   >
-                    {item.name}
+                    {item.caseStudySlug ? (
+                      <Link
+                        href={`/casestudy#${item.caseStudySlug}`}
+                        className="group/link inline-flex items-center gap-1.5 transition-colors hover:text-[#3D4A32]"
+                      >
+                        {item.name}
+                        <svg
+                          className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover/link:opacity-100 group-hover/link:translate-x-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </Link>
+                    ) : (
+                      item.name
+                    )}
                   </li>
                 ))}
               </ul>

@@ -6,10 +6,11 @@ import Link from "next/link";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#our-dentist", label: "Our Dentist" },
-  { href: "#plan-your-visit", label: "Plan Your Visit" },
+  { href: "#plan-your-visit", label: "Your Visit" },
   { href: "#services", label: "Services" },
   { href: "#assesment", label: "Assesment" },
   { href: "/practice", label: "Practice" },
+  { href: "/casestudy", label: "Case Studies" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -39,7 +40,7 @@ export default function StaticHeader() {
         {/* Desktop Navigation - Aligned with hero image (right half) */}
         <div className="hidden lg:grid lg:grid-cols-2 h-14">
           <div className= "m-4 text-2xl font-light text-[#3D4A32] tracking-tight ">  Melona Dent Clinic </div> 
-          <div className="flex items-center justify-center gap-12">
+          <div className="flex items-center justify-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
