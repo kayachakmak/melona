@@ -97,7 +97,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
           className="mt-12"
         >
           <Link
-            href="#assesment"
+            href={navLinks.find((l) => l.href.includes("assesment"))?.href ?? "/#assesment"}
             onClick={handleLinkClick}
             className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-primary-foreground transition-all hover:bg-primary/90"
           >

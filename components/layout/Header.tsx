@@ -1,56 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#our-dentist", label: "Our Dentist" },
-  { href: "#services", label: "Services" },
-  { href: "#assesment", label: "Assesment" },
+  { href: "/#about", label: "About" },
+  { href: "/#our-dentist", label: "Our Dentist" },
+  { href: "/#plan-your-visit", label: "Your Visit" },
+  { href: "/#services", label: "Services" },
+  { href: "/#assesment", label: "Assesment" },
   { href: "/practice", label: "Practice" },
-  { href: "#contact", label: "Contact" },
+  { href: "/casestudy", label: "Case Studies" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
-  const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show header after scrolling past 80% of viewport height (hero section)
-      const heroHeight = window.innerHeight * 1;
-      setIsVisible(window.scrollY > heroHeight);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{
-          y: isVisible ? 0 : -100,
-          opacity: isVisible ? 1 : 0
-        }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#F5F0E1] shadow-sm"
-      >
-        <nav className="px-4 sm:px-6 lg:px-4">
-          <div className="flex h-16 items-center">
-            {/* Logo - Left aligned */}
-            <Link href="/" className="flex-shrink-0">
-              <span className="font-serif text-lg font-normal tracking-tight text-[#3D4A32] md:text-xl">
-                Melona Dent Clinic
-              </span>
-            </Link>
-
-            {/* Desktop Navigation - Right aligned */}
-            <div className="hidden lg:flex items-center gap-12 ml-auto">
+      <header className="sticky top-0 z-50 bg-[#F5F0E1] transition-all duration-300">
+        <nav className="px-4 sm:px-6 lg:px-0">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:grid lg:grid-cols-2 h-14">
+            <div className="m-4 text-2xl font-light text-[#3D4A32] tracking-tight">
+              Melona Dent Clinic
+            </div>
+            <div className="flex items-center justify-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -61,11 +39,18 @@ export default function Header() {
                 </Link>
               ))}
             </div>
+          </div>
 
-            {/* Mobile Menu Button */}
+          {/* Mobile Navigation */}
+          <div className="flex lg:hidden h-14 items-center justify-between">
+            <Link href="/" className="flex-shrink-0">
+              <span className="font-serif text-lg font-normal tracking-tight text-[#3D4A32]">
+                Melona Dent Clinic
+              </span>
+            </Link>
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="flex h-10 w-10 items-center justify-center lg:hidden text-[#3D4A32] ml-auto"
+              className="flex h-10 w-10 items-center justify-center text-[#3D4A32]"
               aria-label="Open menu"
             >
               <svg
@@ -84,7 +69,7 @@ export default function Header() {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>

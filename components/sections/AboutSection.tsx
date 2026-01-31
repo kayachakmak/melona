@@ -109,7 +109,7 @@ export default function AboutSection() {
             className="relative aspect-[4/5] lg:aspect-[3/4]"
           >
             <Image
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1470&auto=format&fit=crop"
+              src="/images/practice/diktedavi.jpg"
               alt="Modern dental clinic with comfortable patient chair"
               fill
               className="object-cover rounded-4xl"
