@@ -14,9 +14,9 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-[#FAF9F6]">
+    <section id="services" className="py-14 sm:py-20 lg:py-32 bg-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Title, Description, CTA */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -25,16 +25,16 @@ export default function ServicesSection() {
             viewport={{ once: true, margin: "-100px" }}
             className="lg:sticky lg:top-32 lg:self-start"
           >
-            <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl lg:text-6xl">
+            <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl xl:text-6xl">
               Services
             </h2>
-            <p className="mt-6 max-w-md text-[#3D4A32]/70 leading-relaxed">
+            <p className="mt-4 sm:mt-6 max-w-md text-[#3D4A32]/70 leading-relaxed">
               At Melona Dent Clinic, we are dedicated to providing a wide range of
               dental solutions to meet your individual needs. If you have a
               specific requirement or need more information about any of our
               services, please don&apos;t hesitate to get in touch with us.
             </p>
-            <div className="mt-10">
+            <div className="mt-6 sm:mt-8 lg:mt-10">
               <Link
                 href="#assesment"
                 className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-6 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3D4A32]/90"

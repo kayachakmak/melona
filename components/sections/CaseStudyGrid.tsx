@@ -1,20 +1,25 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { CaseStudy } from "@/data/caseStudies";
 
 interface CaseStudyGridProps {
   studies: CaseStudy[];
+  onSelect?: (id: string) => void;
+  selectedId?: string;
 }
 
 function CaseStudyCard({
   study,
   index,
+  onSelect,
+  isSelected,
 }: {
   study: CaseStudy;
   index: number;
+  onSelect?: (id: string) => void;
+  isSelected?: boolean;
 }) {
   const hasImage = study.beforeImage || study.afterImage;
   const displayImage = study.afterImage || study.beforeImage;
@@ -26,7 +31,10 @@ function CaseStudyCard({
       transition={{ duration: 0.5, delay: (index % 6) * 0.08 }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <Link href={`#${study.id}`} className="group block">
+      <button
+        onClick={() => onSelect?.(study.id)}
+        className={`group block w-full text-left transition-opacity ${isSelected === false ? "opacity-50 hover:opacity-80" : ""}`}
+      >
         {/* Photo area */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#3D4A32]/5">
           {hasImage ? (
@@ -64,11 +72,11 @@ function CaseStudyCard({
         </div>
 
         {/* Title + tags */}
-        <div className="mt-4">
+        <div className="mt-3">
           <h3 className="font-serif text-lg font-light text-[#3D4A32] transition-colors group-hover:text-[#3D4A32]/70 line-clamp-2">
             {study.title}
           </h3>
-          <div className="mt-2 flex flex-wrap gap-1.5">
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
             {study.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
@@ -79,12 +87,12 @@ function CaseStudyCard({
             ))}
           </div>
         </div>
-      </Link>
+      </button>
     </motion.div>
   );
 }
 
-export default function CaseStudyGrid({ studies }: CaseStudyGridProps) {
+export default function CaseStudyGrid({ studies, onSelect, selectedId }: CaseStudyGridProps) {
   // Featured first, then the rest — single continuous grid
   const sorted = [
     ...studies.filter((s) => s.featured),
@@ -92,11 +100,17 @@ export default function CaseStudyGrid({ studies }: CaseStudyGridProps) {
   ];
 
   return (
-    <section className="pb-24 lg:pb-32">
+    <section className="pb-16 sm:pb-20 lg:pb-32">
       <div className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {sorted.map((study, index) => (
-            <CaseStudyCard key={study.id} study={study} index={index} />
+            <CaseStudyCard
+              key={study.id}
+              study={study}
+              index={index}
+              onSelect={onSelect}
+              isSelected={selectedId ? study.id === selectedId : undefined}
+            />
           ))}
         </div>
       </div>

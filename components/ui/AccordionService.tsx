@@ -19,7 +19,7 @@ export default function AccordionService({
     <div className="border-b border-[#3D4A32]/20">
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-5 text-left transition-colors group"
+        className="flex w-full items-center justify-between py-4 sm:py-5 text-left transition-colors group"
         aria-expanded={isOpen}
       >
         <span className="font-serif text-xl font-light text-[#3D4A32] group-hover:text-[#3D4A32]/70 transition-colors">
@@ -39,7 +39,7 @@ export default function AccordionService({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pb-6">
+            <div className="pb-4 sm:pb-6">
               <ul className="space-y-2">
                 {category.items.map((item, index) => (
                   <li

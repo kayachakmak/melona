@@ -13,10 +13,10 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-between min-h-screen py-12 px-6 sm:px-10 lg:py-0 lg:pl-[3%] lg:pr-2 order-2 lg:order-1"
+          className="flex flex-col justify-between min-h-screen py-8 px-5 sm:py-10 sm:px-10 lg:py-0 lg:pl-[3%] lg:pr-2 order-1"
         >
           {/* Top Content */}
-          <div className="pt-8 lg:pt-2">
+          <div className="pt-4 sm:pt-8 lg:pt-2">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -24,17 +24,17 @@ export default function Hero() {
               className="font-serif font-extralight text-[#3D4A32] leading-[1.1] text-[clamp(2rem,4.5vw,3.5rem)]"
             >
               Boutique Dental
-              <br />
-              Clinic in the heart of
-              <br />
-              Antalya
+              <br className="hidden lg:block" />
+              {" "}Clinic in the heart of
+              <br className="hidden lg:block" />
+              {" "}Antalya
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="mt-5 max-w-xl text-[#3D4A32] text-base leading-relaxed"
+              className="mt-4 sm:mt-5 lg:max-w-xl text-[#3D4A32] text-base leading-relaxed"
             >
           Experience dental care designed exclusively for you. From your very first consultation to the final result, Dt. Melek personally oversees every detail of your journey. We believe in a gentle, one-to-one approach where your comfort is our priority and your smile is crafted with dedicated, hands-on artistry in the heart of Antalya.
             </motion.p>
@@ -43,7 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              className="mt-8"
+              className="mt-6 sm:mt-8"
             >
               <Link
                 href="#assesment"
@@ -61,9 +61,9 @@ export default function Hero() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             className="pb-0"
           >
-            <div className="font-serif text-[#3D4A32] text-[clamp(4rem,25vw,8rem)] leading-[0.85] tracking-tight font-extralight">
-              <span className="">Melona Dent</span>
-              <span className="block pl-[25%]">Clinic</span>
+            <div className="font-serif text-[#3D4A32] text-[clamp(2.5rem,14vw,8rem)] leading-[0.85] tracking-tight font-extralight text-center whitespace-nowrap">
+              <span>Melona Dent</span>
+              <span className="block whitespace-normal">Clinic</span>
             </div>
           </motion.div>
         </motion.div>
@@ -73,7 +73,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative h-[50vh] lg:h-auto order-1 lg:order-2"
+          className="relative h-[40vh] sm:h-[50vh] lg:h-auto order-2"
         >
           <Image
             src="https://omp.dentist/media/pages/home/7cfc7f84bc-1707221487/omp-banner-1200x-q80.webp"

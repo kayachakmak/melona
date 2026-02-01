@@ -6,15 +6,13 @@ import type { CaseStudy } from "@/data/caseStudies";
 
 interface CaseStudySectionProps {
   study: CaseStudy;
-  reversed?: boolean;
 }
 
 export default function CaseStudySection({
   study,
-  reversed,
 }: CaseStudySectionProps) {
   return (
-    <section id={study.id} className="scroll-mt-20 py-24 lg:py-32">
+    <section id={study.id} className="scroll-mt-20 py-14 sm:py-16 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header — category, title, tags */}
         <motion.div
@@ -22,7 +20,7 @@ export default function CaseStudySection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-12"
+          className="mb-8 sm:mb-10 lg:mb-12"
         >
           <span className="inline-block rounded-full bg-[#3D4A32]/10 px-3 py-1 text-xs font-medium tracking-wide text-[#3D4A32]/70 mb-4">
             {study.category}
@@ -30,7 +28,7 @@ export default function CaseStudySection({
           <h2 className="font-serif text-3xl font-light tracking-tight text-[#3D4A32] sm:text-4xl lg:text-5xl">
             {study.title}
           </h2>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {study.tags.map((tag) => (
               <span
                 key={tag}
@@ -44,7 +42,7 @@ export default function CaseStudySection({
 
         {/* Patient story + profile */}
         <div
-          className={`grid gap-12 lg:grid-cols-3 lg:gap-16 items-start ${reversed ? "lg:direction-rtl" : ""}`}
+          className="grid gap-8 sm:gap-10 lg:grid-cols-3 lg:gap-16 items-start"
         >
           {/* Presentation narrative — 2 cols */}
           <motion.div
@@ -52,7 +50,7 @@ export default function CaseStudySection({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className={`lg:col-span-2 ${reversed ? "lg:order-2" : ""}`}
+            className="lg:col-span-2"
           >
             <h3 className="font-serif text-xl font-light text-[#3D4A32] mb-4">
               The Story
@@ -63,7 +61,7 @@ export default function CaseStudySection({
 
             {/* Main concerns */}
             {study.mainConcerns.length > 0 && (
-              <div className="mt-10">
+              <div className="mt-6 sm:mt-8 lg:mt-10">
                 <h3 className="font-serif text-xl font-light text-[#3D4A32] mb-4">
                   Main Concerns
                 </h3>
@@ -88,14 +86,14 @@ export default function CaseStudySection({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
             viewport={{ once: true, margin: "-100px" }}
-            className={`${reversed ? "lg:order-1" : ""}`}
+            className=""
           >
             {study.patientProfile && (
-              <div className="rounded-2xl bg-[#3D4A32]/5 p-6 lg:p-8">
-                <h4 className="font-serif text-lg font-light text-[#3D4A32] mb-5">
+              <div className="rounded-2xl bg-[#3D4A32]/5 p-5 sm:p-6 lg:p-8">
+                <h4 className="font-serif text-lg font-light text-[#3D4A32] mb-3 sm:mb-4 lg:mb-5">
                   Patient Profile
                 </h4>
-                <dl className="space-y-4">
+                <dl className="space-y-3 sm:space-y-4">
                   {study.patientProfile.age && (
                     <div>
                       <dt className="text-xs font-medium uppercase tracking-wider text-[#3D4A32]/40">
@@ -142,7 +140,7 @@ export default function CaseStudySection({
 
             {/* Treatment goals in sidebar when profile exists */}
             {study.patientProfile && study.treatmentGoals.length > 0 && (
-              <div className="mt-6 rounded-2xl border border-[#3D4A32]/10 p-6 lg:p-8">
+              <div className="mt-4 sm:mt-6 rounded-2xl border border-[#3D4A32]/10 p-5 sm:p-6 lg:p-8">
                 <h4 className="font-serif text-lg font-light text-[#3D4A32] mb-4">
                   Treatment Goals
                 </h4>
@@ -181,12 +179,12 @@ export default function CaseStudySection({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
-            className="mt-12"
+            className="mt-8 sm:mt-10 lg:mt-12"
           >
             <h3 className="font-serif text-xl font-light text-[#3D4A32] mb-5">
               Treatment Goals
             </h3>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
               {study.treatmentGoals.map((goal, i) => (
                 <div
                   key={i}
@@ -218,9 +216,9 @@ export default function CaseStudySection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-16"
+          className="mt-10 sm:mt-12 lg:mt-16"
         >
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div>
               <p className="mb-3 text-xs font-medium uppercase tracking-widest text-[#3D4A32]/40">
                 Before
@@ -296,15 +294,15 @@ export default function CaseStudySection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-16"
+          className="mt-10 sm:mt-12 lg:mt-16"
         >
           <h3 className="font-serif text-2xl font-light text-[#3D4A32] mb-4">
             Treatment Approach
           </h3>
-          <p className="text-[#3D4A32]/70 leading-relaxed mb-8 max-w-3xl">
+          <p className="text-[#3D4A32]/70 leading-relaxed mb-5 sm:mb-6 lg:mb-8 max-w-3xl">
             {study.treatmentApproach.description}
           </p>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             {study.treatmentApproach.steps.map((step, i) => (
               <div key={i} className="flex items-start gap-4">
                 <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10 text-xs font-medium text-[#3D4A32]/60">
@@ -322,12 +320,12 @@ export default function CaseStudySection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-16"
+          className="mt-10 sm:mt-12 lg:mt-16"
         >
-          <h3 className="font-serif text-2xl font-light text-[#3D4A32] mb-6">
+          <h3 className="font-serif text-2xl font-light text-[#3D4A32] mb-4 sm:mb-5 lg:mb-6">
             Results
           </h3>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
             {study.outcome.map((item, i) => (
               <div
                 key={i}
@@ -358,9 +356,9 @@ export default function CaseStudySection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-16 rounded-2xl bg-[#3D4A32] p-8 lg:p-12"
+          className="mt-10 sm:mt-12 rounded-2xl bg-[#3D4A32] p-5 sm:p-6 lg:p-12"
         >
-          <h3 className="font-serif text-xl font-light text-[#F5F0E1] mb-4">
+          <h3 className="font-serif text-xl font-light text-[#F5F0E1] mb-3 sm:mb-4">
             Clinical Perspective
           </h3>
           <p className="text-[#F5F0E1]/80 leading-relaxed text-lg">

@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-[#faf0be]">
+    <section id="about" className="py-14 sm:py-20 lg:py-32 bg-[#faf0be]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -15,20 +15,20 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl">
-              About the Practice
+            <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl text-center lg:text-left">
+              <span className="inline-block border-b border-[#3D4A32]/30 pb-1 lg:border-0 lg:pb-0">About the Practice</span>
             </h2>
-            <div className="mt-6 space-y-4 text-xl text-[#3D4A32]/80">
-              <p>
+            <div className="mt-4 sm:mt-6 space-y-4 text-[#3D4A32]/80 text-center lg:text-left">
+              <p className="font-serif text-2xl sm:text-3xl lg:text-xl lg:font-sans font-light leading-snug lg:leading-relaxed lg:font-normal">
               We are proud to open our doors as a premier boutique destination for oral health. While our clinic is brand new, our philosophy is timeless: patient-first care. We have curated a space where state-of-the-art dental technology meets a calm, sophisticated atmosphere. By investing in the latest diagnostic tools and premium materials, we ensure that your treatment is not only faster and more comfortable but performed with a level of precision that only the newest innovations can provide. At our clinic, the future of dentistry is personal.              </p>
             </div>
 
             {/* Features */}
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <div className="hidden lg:grid mt-6 sm:mt-8 lg:mt-10 gap-4 sm:gap-6 sm:grid-cols-2">
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
                   <svg
-                    className="h-6 w-6"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
                     fill="none"
                     stroke="#3D4A32"
                     viewBox="0 0 24 24"
@@ -49,9 +49,9 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
                   <svg
-                    className="h-6 w-6"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
                     fill="none"
                     stroke="#3D4A32"
                     viewBox="0 0 24 24"
@@ -73,11 +73,11 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="mt-6 flex justify-center">
+            <div className="hidden lg:flex mt-4 sm:mt-6 justify-center">
               <div className="flex items-start gap-4 max-w-xs text-left">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
                   <svg
-                    className="h-6 w-6"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
                     fill="none"
                     stroke="#3D4A32"
                     viewBox="0 0 24 24"

@@ -44,7 +44,7 @@ const steps = [
 
 export default function PlanYourVisitSection() {
   return (
-    <section id="plan-your-visit" className="py-24 lg:py-32 bg-[#faf4d4]">
+    <section id="plan-your-visit" className="py-14 sm:py-20 lg:py-32 bg-[#faf4d4]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -52,18 +52,18 @@ export default function PlanYourVisitSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl">
+          <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl">
             Plan Your Visit
           </h2>
-          <p className="mt-4 text-lg text-[#3D4A32]/70 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-lg text-[#3D4A32]/70 max-w-2xl mx-auto">
             Your journey to a perfect smile starts here. We make it simple for international patients.
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {/* Steps — compact list on mobile, image cards on lg */}
+        <div className="hidden lg:grid lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -77,7 +77,6 @@ export default function PlanYourVisitSection() {
               viewport={{ once: true, margin: "-50px" }}
               className="group"
             >
-              {/* Image */}
               <div className="relative aspect-[4/3] mb-6 overflow-hidden rounded-2xl">
                 <Image
                   src={step.image}
@@ -85,18 +84,45 @@ export default function PlanYourVisitSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Step number overlay */}
                 <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#3D4A32] text-white font-serif text-sm">
                   {step.number}
                 </div>
               </div>
-
-              {/* Content */}
               <div>
                 <h3 className="font-serif text-xl font-light text-[#3D4A32] mb-2">
                   {step.title}
                 </h3>
                 <p className="text-[#3D4A32]/70 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile/tablet — numbered list, no images */}
+        <div className="lg:hidden space-y-5">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                ease: "easeOut",
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true, margin: "-30px" }}
+              className="flex items-start gap-4"
+            >
+              <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32] text-white font-serif text-sm">
+                {step.number}
+              </span>
+              <div className="pt-0.5">
+                <h3 className="font-serif text-lg font-light text-[#3D4A32]">
+                  {step.title}
+                </h3>
+                <p className="mt-1 text-[#3D4A32]/70 text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -110,7 +136,7 @@ export default function PlanYourVisitSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-12 lg:mt-16"
         >
           <a
             href="#assesment"
