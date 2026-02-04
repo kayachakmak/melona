@@ -146,9 +146,9 @@ export default function FreeConsultationSection() {
   };
 
   return (
-    <section id="assesment" className="py-24 lg:py-32 bg-[#f5f0d5]">
+    <section id="assesment" className="py-14 sm:py-20 lg:py-32 bg-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -157,13 +157,13 @@ export default function FreeConsultationSection() {
             viewport={{ once: true, margin: "-100px" }}
             className="lg:sticky lg:top-32"
           >
-            <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl">
-              Free Assessment and Consultation
+            <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl">
+              Free Consultation
             </h2>
-            <p className="mt-6 text-lg text-[#3D4A32]/70">
+            <p className="mt-4 sm:mt-6 text-lg text-[#3D4A32]/70">
               Not sure where to start? Send us your photos and receive a personalized treatment plan with pricing and estimated duration of stay—all within 1 hour. No obligation, no pressure—just honest advice to help you achieve your best smile.
             </p>
-            <ul className="mt-8 space-y-4">
+            <ul className="mt-5 sm:mt-8 space-y-3 sm:space-y-4">
               <li className="flex items-center gap-3">
                 <svg className="h-5 w-5 flex-shrink-0" fill="none" stroke="#3D4A32" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -198,7 +198,7 @@ export default function FreeConsultationSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 lg:p-8 shadow-lg">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -216,7 +216,7 @@ export default function FreeConsultationSection() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 lg:space-y-6">
                   {/* Full Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-[#3D4A32] mb-2">
@@ -508,7 +508,7 @@ export default function FreeConsultationSection() {
                         Submitting...
                       </span>
                     ) : (
-                      "Get Free Assessment"
+                      "Get Free Consultation"
                     )}
                   </button>
                 </form>

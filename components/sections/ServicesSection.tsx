@@ -1,67 +1,168 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { services } from "@/data/services";
-import AccordionService from "@/components/ui/AccordionService";
 
 export default function ServicesSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section id="services" className="py-24 lg:py-32 bg-[#FAF9F6]">
+    <section id="services" className="py-14 sm:py-20 lg:py-12 bg-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left Column - Title, Description, CTA */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="lg:sticky lg:top-32 lg:self-start"
-          >
-            <h2 className="font-serif text-4xl font-light tracking-tight text-[#3D4A32] sm:text-5xl lg:text-6xl">
-              Services
-            </h2>
-            <p className="mt-6 max-w-md text-[#3D4A32]/70 leading-relaxed">
-              At Melona Dent Clinic, we are dedicated to providing a wide range of
-              dental solutions to meet your individual needs. If you have a
-              specific requirement or need more information about any of our
-              services, please don&apos;t hesitate to get in touch with us.
-            </p>
-            <div className="mt-10">
-              <Link
-                href="#assesment"
-                className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-6 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3D4A32]/90"
-              >
-                Book Today
-              </Link>
-            </div>
-          </motion.div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center mb-8 sm:mb-12 lg:mb-8"
+        >
+          <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl">
+            Treatments
+          </h2>
+          <p className="mt-3 sm:mt-4 text-lg text-[#3D4A32]/70 max-w-2xl mx-auto">
+            At Melona Dent Clinic, we are dedicated to providing a wide range of
+            dental solutions to meet your individual needs.
+          </p>
+        </motion.div>
 
-          {/* Right Column - Accordion */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="border-t border-[#3D4A32]/20">
-              {services.map((category, index) => (
-                <AccordionService
-                  key={category.category}
-                  category={category}
-                  isOpen={openIndex === index}
-                  onToggle={() => handleToggle(index)}
-                />
-              ))}
-            </div>
-          </motion.div>
+        {/* Desktop — 4 columns */}
+        <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+          {services.map((category, index) => (
+            <motion.div
+              key={category.category}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.15,
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <h3 className="font-serif underline text-2xl font-medium text-[#3D4A32] mb-4">
+                {category.category}
+              </h3>
+
+              <div className="space-y-3">
+                {category.items.map((item, i) => (
+                  <div key={i}>
+                    <div className="grid grid-cols-2 gap-1.5 mb-1">
+                      <div className="relative aspect-[3/2] rounded-lg overflow-hidden bg-[#3D4A32]/5">
+                        {item.beforeImage ? (
+                          <Image
+                            src={item.beforeImage}
+                            alt={`${item.name} before`}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span className="absolute inset-0 flex items-center justify-center text-xs text-[#3D4A32]/30">
+                            Before
+                          </span>
+                        )}
+                      </div>
+                      <div className="relative aspect-[3/2] rounded-lg overflow-hidden bg-[#3D4A32]/5">
+                        {item.afterImage ? (
+                          <Image
+                            src={item.afterImage}
+                            alt={`${item.name} after`}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span className="absolute inset-0 flex items-center justify-center text-xs text-[#3D4A32]/30">
+                            After
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    {item.caseStudySlug ? (
+                      <Link
+                        href={`/casestudy#${item.caseStudySlug}`}
+                        className="text-sm text-[#3D4A32]/70 hover:text-[#3D4A32] transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className="text-sm text-[#3D4A32]/70">
+                        {item.name}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile/tablet — stacked list */}
+        <div className="lg:hidden space-y-8">
+          {services.map((category, index) => (
+            <motion.div
+              key={category.category}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                ease: "easeOut",
+                delay: index * 0.08,
+              }}
+              viewport={{ once: true, margin: "-30px" }}
+            >
+              <h3 className="font-serif text-xl font-medium text-[#3D4A32] mb-4">
+                {category.category}
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {category.items.map((item, i) => (
+                  <div key={i}>
+                    <div className="grid grid-cols-2 gap-1.5 mb-1.5">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-[#3D4A32]/5">
+                        {item.beforeImage ? (
+                          <Image
+                            src={item.beforeImage}
+                            alt={`${item.name} before`}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span className="absolute inset-0 flex items-center justify-center text-xs text-[#3D4A32]/30">
+                            Before
+                          </span>
+                        )}
+                      </div>
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-[#3D4A32]/5">
+                        {item.afterImage ? (
+                          <Image
+                            src={item.afterImage}
+                            alt={`${item.name} after`}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span className="absolute inset-0 flex items-center justify-center text-xs text-[#3D4A32]/30">
+                            After
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    {item.caseStudySlug ? (
+                      <Link
+                        href={`/casestudy#${item.caseStudySlug}`}
+                        className="text-xs text-[#3D4A32]/70 hover:text-[#3D4A32] transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className="text-xs text-[#3D4A32]/70">
+                        {item.name}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

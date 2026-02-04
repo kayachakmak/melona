@@ -26,6 +26,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
   }, [isOpen]);
 
   const handleLinkClick = () => {
+    document.body.style.overflow = "unset";
     onClose();
   };
 
@@ -35,16 +36,13 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[100] bg-background"
+      className="fixed inset-0 z-[100] bg-[#F5F0E1] flex flex-col"
     >
-      {/* Header with close button */}
-      <div className="flex h-20 items-center justify-between px-4">
-        <span className="font-serif text-xl font-semibold tracking-tight">
-          Melona Dent Clinic
-        </span>
+      {/* Close button — centered */}
+      <div className="flex h-14 items-center justify-center">
         <button
           onClick={onClose}
-          className="flex h-10 w-10 items-center justify-center"
+          className="flex h-10 w-10 items-center justify-center text-[#3D4A32]"
           aria-label="Close menu"
         >
           <svg
@@ -65,46 +63,42 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
 
       {/* Navigation Links */}
       <motion.nav
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
-        className="flex flex-col items-center justify-center px-4 py-12"
+        className="flex-1 flex flex-col items-center justify-center px-4"
       >
-        <ul className="space-y-6 text-center">
+        <ul className="space-y-5 text-center">
           {navLinks.map((link, index) => (
             <motion.li
               key={link.href}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
+              transition={{ duration: 0.3, delay: 0.1 + index * 0.04 }}
             >
               <Link
                 href={link.href}
                 onClick={handleLinkClick}
-                className="font-serif text-3xl font-medium text-foreground transition-colors hover:text-primary"
+                className="text-lg font-normal text-[#3D4A32] transition-colors hover:text-[#3D4A32]/60"
               >
                 {link.label}
               </Link>
             </motion.li>
           ))}
         </ul>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.4 }}
-          className="mt-12"
-        >
-          <Link
-            href={navLinks.find((l) => l.href.includes("assesment"))?.href ?? "/#assesment"}
-            onClick={handleLinkClick}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-lg font-medium text-primary-foreground transition-all hover:bg-primary/90"
-          >
-            Book Free Consultation
-          </Link>
-        </motion.div>
       </motion.nav>
+
+      {/* Brand name — bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+        className="pb-10 text-center"
+      >
+        <span className="font-serif text-2xl font-light tracking-tight text-[#3D4A32]">
+          Melona Dent Clinic
+        </span>
+      </motion.div>
     </motion.div>
   );
 }

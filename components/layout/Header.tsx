@@ -1,33 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 
 const navLinks = [
   { href: "/#about", label: "About" },
+  { href: "/#services", label: "Treatments" },
   { href: "/#our-dentist", label: "Our Dentist" },
-  { href: "/#plan-your-visit", label: "Your Visit" },
-  { href: "/#services", label: "Services" },
-  { href: "/#assesment", label: "Assesment" },
-  { href: "/practice", label: "Practice" },
+  { href: "/#plan-your-visit", label: "Plan Your Visit" },
+  { href: "/#assesment", label: "Free Consultation" },
+  { href: "/clinic", label: "Clinic" },
   { href: "/casestudy", label: "Case Studies" },
   { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-[#F5F0E1] transition-all duration-300">
+      <header
+        className="sticky top-0 z-50 transition-all duration-300"
+        style={{
+          backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.3)" : "#ebdfed",
+          backdropFilter: isScrolled ? "blur(12px)" : "none",
+        }}
+      >
         <nav className="px-4 sm:px-6 lg:px-0">
           {/* Desktop Navigation */}
           <div className="hidden lg:grid lg:grid-cols-2 h-14">
-            <div className="m-4 text-2xl font-light text-[#3D4A32] tracking-tight">
-              Melona Dent Clinic
-            </div>
+            <Link href="/" className="m-4 text-2xl font-light text-[#3D4A32] tracking-tight">Melona Dent Clinic</Link>
             <div className="flex items-center justify-center gap-6">
               {navLinks.map((link) => (
                 <Link
@@ -42,12 +56,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="flex lg:hidden h-14 items-center justify-between">
-            <Link href="/" className="flex-shrink-0">
-              <span className="font-serif text-lg font-normal tracking-tight text-[#3D4A32]">
-                Melona Dent Clinic
-              </span>
-            </Link>
+          <div className="flex lg:hidden h-14 items-center justify-center">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
               className="flex h-10 w-10 items-center justify-center text-[#3D4A32]"
@@ -71,7 +80,6 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <MobileMenu
