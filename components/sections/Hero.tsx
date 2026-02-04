@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-[#FAF9F6]">
-      <div className="grid lg:grid-cols-2 min-h-screen">
+    <section className="bg-[#FAF9F6]">
+      <div className="grid lg:grid-cols-2 min-h-screen lg:min-h-0 lg:h-[calc(100vh-6rem)]">
         {/* Left Column - Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-between min-h-screen py-8 px-5 sm:py-10 sm:px-10 lg:py-0 lg:pl-[3%] lg:pr-2 order-1"
+          className="flex flex-col justify-between min-h-screen lg:min-h-0 py-8 px-5 sm:py-10 sm:px-10 lg:py-0 lg:pl-[3%] lg:pr-2 order-1"
         >
           {/* Top Content */}
           <div className="pt-4 sm:pt-8 lg:pt-2">
@@ -23,11 +23,9 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="font-serif font-extralight text-[#3D4A32] leading-[1.1] text-[clamp(2rem,4.5vw,3.5rem)]"
             >
-              Boutique Dental
+              Boutique Dental Clinic
               <br className="hidden lg:block" />
-              {" "}Clinic in the heart of
-              <br className="hidden lg:block" />
-              {" "}Antalya
+              {" "}in the heart of Antalya
             </motion.h1>
 
             <motion.p
@@ -49,7 +47,7 @@ export default function Hero() {
                 href="#assesment"
                 className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-5 py-2.5 text-xs font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3d4d3d] focus:outline-none focus:ring-2 focus:ring-[#3D4A32] focus:ring-offset-2"
               >
-                Get a Free Assessment
+                Get a Free Consultation
               </Link>
             </motion.div>
           </div>

@@ -1,6 +1,8 @@
 export interface ServiceItem {
   name: string;
   caseStudySlug?: string;
+  beforeImage?: string;
+  afterImage?: string;
 }
 
 export interface ServiceCategory {
@@ -32,7 +34,6 @@ export const services: ServiceCategory[] = [
   {
     category: "Implants",
     items: [
-      { name: "Dental Implants", caseStudySlug: "implant-rehabilitation" },
       { name: "All-on-4", caseStudySlug: "implant-rehabilitation" },
       { name: "All-on-6", caseStudySlug: "implant-rehabilitation" },
     ],
@@ -45,6 +46,9 @@ export const services: ServiceCategory[] = [
       { name: "Gum Disease Treatment" },
     ],
   },
+];
+
+  const additionalServices: ServiceCategory[] = [ 
   {
     category: "Additional Services",
     items: [

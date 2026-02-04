@@ -36,6 +36,18 @@ export default function Footer() {
             >
               Get Directions
             </a>
+            <div className="mt-3 rounded-lg overflow-hidden aspect-[4/3]">
+              <iframe
+                src="https://www.google.com/maps?q=Melona+Dent+Clinic,+123+Dental+Street,+Antalya,+Turkey&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Melona Dent Clinic location"
+              />
+            </div>
           </div>
 
           {/* Opening Hours */}

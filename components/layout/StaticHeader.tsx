@@ -7,11 +7,11 @@ import MobileMenu from "./MobileMenu";
 
 const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#services", label: "Treatments" },
   { href: "#our-dentist", label: "Our Dentist" },
-  { href: "#plan-your-visit", label: "Your Visit" },
-  { href: "#services", label: "Services" },
-  { href: "#assesment", label: "Assesment" },
-  { href: "/practice", label: "Practice" },
+  { href: "#plan-your-visit", label: "Plan Your Visit" },
+  { href: "#assesment", label: "Free Consultation" },
+  { href: "/clinic", label: "Clinic" },
   { href: "/casestudy", label: "Case Studies" },
   { href: "#contact", label: "Contact" },
 ];
@@ -36,14 +36,14 @@ export default function StaticHeader() {
       <header
         className="sticky top-0 z-50 transition-all duration-300"
         style={{
-          backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.3)" : "#F5F0E1",
+          backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.3)" : "#ebdfed",
           backdropFilter: isScrolled ? "blur(12px)" : "none",
         }}
       >
         <nav className="px-4 sm:px-6 lg:px-0">
           {/* Desktop Navigation - Aligned with hero image (right half) */}
           <div className="hidden lg:grid lg:grid-cols-2 h-14">
-            <div className= "m-4 text-2xl font-light text-[#3D4A32] tracking-tight ">  Melona Dent Clinic </div>
+            <Link href="/" className="m-4 text-2xl font-light text-[#3D4A32] tracking-tight">Melona Dent Clinic</Link>
             <div className="flex items-center justify-center gap-6">
               {navLinks.map((link) => (
                 <Link

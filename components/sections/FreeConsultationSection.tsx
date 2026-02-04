@@ -146,7 +146,7 @@ export default function FreeConsultationSection() {
   };
 
   return (
-    <section id="assesment" className="py-14 sm:py-20 lg:py-32 bg-[#f5f0d5]">
+    <section id="assesment" className="py-14 sm:py-20 lg:py-32 bg-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Content */}
@@ -158,7 +158,7 @@ export default function FreeConsultationSection() {
             className="lg:sticky lg:top-32"
           >
             <h2 className="font-serif text-3xl sm:text-4xl font-light tracking-tight text-[#3D4A32] lg:text-5xl">
-              Free Assessment and Consultation
+              Free Consultation
             </h2>
             <p className="mt-4 sm:mt-6 text-lg text-[#3D4A32]/70">
               Not sure where to start? Send us your photos and receive a personalized treatment plan with pricing and estimated duration of stay—all within 1 hour. No obligation, no pressure—just honest advice to help you achieve your best smile.
@@ -508,7 +508,7 @@ export default function FreeConsultationSection() {
                         Submitting...
                       </span>
                     ) : (
-                      "Get Free Assessment"
+                      "Get Free Consultation"
                     )}
                   </button>
                 </form>

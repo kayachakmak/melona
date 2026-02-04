@@ -39,14 +39,14 @@ export default function CaseStudyPage() {
               Ready to Start Your Journey?
             </h2>
             <p className="mt-4 text-lg text-[#F5F0E1]/70 max-w-xl mx-auto">
-              Book a free assessment to discuss your treatment options with our
+              Book a free consultation to discuss your treatment options with our
               experienced dental team.
             </p>
             <Link
               href="/#assesment"
               className="mt-6 sm:mt-8 inline-block rounded-full bg-[#F5F0E1] px-8 py-3 text-sm font-medium text-[#3D4A32] transition-colors hover:bg-white"
             >
-              Book Free Assessment
+              Book Free Consultation
             </Link>
           </div>
         </section>

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Free Assessment",
+    title: "Free Consultation",
     description:
       "Upload your photos or X-rays and receive a personalized treatment plan with pricing and estimated duration of stay.",
     image:
@@ -44,7 +44,7 @@ const steps = [
 
 export default function PlanYourVisitSection() {
   return (
-    <section id="plan-your-visit" className="py-14 sm:py-20 lg:py-32 bg-[#faf4d4]">
+    <section id="plan-your-visit" className="py-14 sm:py-20 lg:py-32 bg-[#FAF9F6]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -142,7 +142,7 @@ export default function PlanYourVisitSection() {
             href="#assesment"
             className="inline-flex items-center justify-center rounded-full bg-[#3D4A32] px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all hover:bg-[#3D4A32]/90 focus:outline-none focus:ring-2 focus:ring-[#3D4A32] focus:ring-offset-2"
           >
-            Get Your Free Assessment
+            Get Your Free Consultation
           </a>
         </motion.div>
       </div>

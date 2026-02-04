@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-14 sm:py-20 lg:py-32 bg-[#faf0be]">
+    <section id="about" className="py-14 sm:py-20 lg:py-32 bg-[#efebf0]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Text Content */}
@@ -78,15 +78,12 @@ export default function AboutSection() {
                 <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#3D4A32]/10">
                   <svg
                     className="h-5 w-5 sm:h-6 sm:w-6"
-                    fill="none"
-                    stroke="#3D4A32"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M12 3c-1.1 0-2 .4-2.6.9-.3.3-.1.8.3.9.6.2 1.2.3 1.9.3.7 0 1.3-.1 1.9-.3.4-.1.6-.6.3-.9C14 3.4 13.1 3 12 3zm-4 2c-.9 0-1.7.3-2.3.8-.3.3-.1.8.3.9.6.2 1.2.2 2 .2.8 0 1.4-.1 2-.2.4-.1.5-.6.2-.9C15.2 5.3 14.4 5 13.5 5zm8 0c-.9 0-1.7.3-2.5.8-.3.3-.2.8.2.9.6.1 1.2.2 2 .2.7 0 1.4-.1 2-.2.4-.1.6-.6.3-.9-.6-.5-1.4-.8-2.3-.8zM11 7.5c-.9-.6-1.8-.9-2.9-.9-.7 0-1.3.1-1.9.2-.4.1-.6.6-.3.9.4.7 1 1.2 1.7 1.5.7.3 1.5.4 2.4.4H11V20H10c-.6 0-1 .4-1 1s.4 1 1 1h4c.6 0 1-.4 1-1s-.4-1-1-1h-1V9.6c.9 0 1.7-.2 2.4-.4.7-.3 1.3-.8 1.7-1.5.2-.3.1-.8-.3-.9-.6-.1-1.2-.2-1.9-.2-1.1 0-2 .3-2.9.9V7.5z"
+                      fill="#3D4A32"
                     />
                   </svg>
                 </div>
